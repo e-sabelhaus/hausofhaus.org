@@ -13,6 +13,9 @@
     "serve-favicon": "~2.1.3",
     "debug": "~2.0.0",
     "jade": "~1.6.0",
-		"node-sass"
+    "node-sass": "~1.0.1",
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.6.1",
+    "grunt-sass": "~0.16.0"
   }
 }
