@@ -5,9 +5,9 @@ html
     title Haus of Haus
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    link(rel='stylesheet', href='css/foundation.css')
-    script(src='js/vendor/modernizr.js')
-    link(rel='stylesheet', href='css/style.css')
+    link(rel='stylesheet', href='/css/foundation.css')
+    script(src='/js/vendor/modernizr.js')
+    link(rel='stylesheet', href='/css/style.css')
   body
     block header
       nav.top-bar(data-topbar='data-topbar', role='navigation')
@@ -53,14 +53,12 @@ html
                     a(href='/logout') logout
                   li
                     a(href='/profile') profile
-                  li
-                    a(href='/poet') write post
     block content
-      script(src='js/vendor/jquery.js')
-      script(src='js/foundation.min.js')
+      script(src='/js/vendor/jquery.js')
+      script(src='/js/foundation.min.js')
       script.
         $(document).foundation();
-      script(src='js/stick_footer.js')
+      script(src='/js/stick_footer.js')
     block foot
       #footer
         p Designed by Eric Sabelhaus
