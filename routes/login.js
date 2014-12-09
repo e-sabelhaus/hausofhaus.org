@@ -4,9 +4,9 @@ var router = express.Router();
 (function(){
   "use strict";
 
-/* GET users listing. */
-router.get('/users', function(req, res) {
-  res.render('user');
+/* GET home page. */
+router.get('/login', function(req, res) {
+  res.render('login');
 });
 
 module.exports = router;

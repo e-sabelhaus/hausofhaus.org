@@ -1,27 +1,28 @@
-var
-  express = require('express'),
-  app = express(),
-  Poet = require('poet'),
-  passport = require('passport'),
-  path = require('path'),
-  favicon = require('serve-favicon'),
-  logger = require('morgan'),
-  cookieParser = require('cookie-parser'),
-  bodyParser = require('body-parser'),
-  routes = require('./routes/index'),
-  users = require('./routes/users');
+var express = require('express'),
+    app = express(),
+    Poet = require('poet'),
+    passport = require('passport'),
+    path = require('path'),
+    favicon = require('serve-favicon'),
+    logger = require('morgan'),
+    cookieParser = require('cookie-parser'),
+    bodyParser = require('body-parser'),
+    routes = require('./routes/index'),
+    users = require('./routes/users'),
+    login = require('./routes/login');
 
-var poet = Poet(app, {
-  posts: './_posts/',
-  postsPerPage: 5,
-  metaFormat: 'json'
-});
+ var poet = Poet(app, {
+   posts: './_posts/',
+   postsPerPage: 5,
+   metaFormat: 'json'
+ });
 
-"use strict";
+(function(){
+ "use strict";
 
-poet.init().then(function () {
-  // ready to go!
-});
+ poet.init().then(function () {
+   // ready to go!
+ });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -37,10 +38,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
+app.use('/login', login);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-   "use strict";
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
@@ -52,7 +53,6 @@ app.use(function(req, res, next) {
 // will print stacktrace
 if (app.get('env') === 'development') {
     app.use(function(err, req, res, next) {
-        "use strict";
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -64,7 +64,6 @@ if (app.get('env') === 'development') {
 // production error handler
 // no stacktraces leaked to user
 app.use(function(err, req, res, next) {
-    "use strict";
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
@@ -79,3 +78,4 @@ module.exports = app;
 
 
 app.listen(3000);
+})();

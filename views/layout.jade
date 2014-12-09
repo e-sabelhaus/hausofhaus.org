@@ -1,5 +1,5 @@
 doctype html
-- var user = { isAnonymous: true, name: 'Eric Sabelhaus' }
+- var user = { isAnonymous: false, name: 'Eric Sabelhaus' }
 html
   head
     title Haus of Haus
@@ -14,7 +14,7 @@ html
         ul.title-area
           li.name
             h1
-              a(href='#') Hausofhaus
+              a(href='/') Hausofhaus
           if user.isAnonymous
               li.toggle-topbar.menu-icon.has-dropdown
                 a(href='#')
@@ -29,7 +29,7 @@ html
                 a(href='#')
                   span
                 ul.dropdown
-                  li 
+                  li
                     a(href='/logout') logout
                   li
                     a(href='/profile') profile
@@ -49,19 +49,16 @@ html
               li.has-dropdown.not-click
                 a(href='#') #{user.name}
                 ul.dropdown
-                  li 
+                  li
                     a(href='/logout') logout
                   li
                     a(href='/profile') profile
                   li
                     a(href='/poet') write post
-          ul.left
-            li
-              a(href='#') Left Nav Button
     block content
       script(src='js/vendor/jquery.js')
       script(src='js/foundation.min.js')
-      script
+      script.
         $(document).foundation();
       script(src='js/stick_footer.js')
     block foot

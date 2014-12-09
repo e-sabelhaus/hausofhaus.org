@@ -3,7 +3,7 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
     jshint: {
       // define the files to lint
-      files: ['app/**/*.js', 'app.js'],
+      files: ['routes/*.js', 'app/*.js', 'app.js'],
       // configure JSHint (documented at http://www.jshint.com/docs/)
       options: {
         maxdepth: 2,
@@ -14,16 +14,37 @@ module.exports = function(grunt) {
       },
     },
     plato: {
-      options: {
-      },
-      your_target: {
-        // Target-specific file lists and/or options go here.
+      coverage: {
+        options: {
+        },
+        files: {
+          'plato': ['routes/*.js', 'app/*.js', 'app.js']
+        }
+      }
+    },
+    mochaTest: {
+      test: {
+        src: ['test/**/*.js'],
+        options: {
+          captureFile: 'mocha/results.txt'
+        }
+      }
+    },
+    forever: {
+      prestige:{
+        options: {
+          index: 'app.js',
+          logDir: 'log'
+        }
       }
     }
   });
-  grunt.registerTask('default', ['jshint']);
+  grunt.registerTask('start', ['forever:prestige:start']);
+  grunt.registerTask('stop', ['forever:prestige:stop']);
+  grunt.registerTask('default', ['jshint', 'plato:coverage', 'mochaTest']);
+  grunt.registerTask('plato', ['plato:coverage']);
+  grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-plato');
-  grunt.loadNpmTasks('grunt-karma');
+  grunt.loadNpmTasks('grunt-forever');
   grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-contrib-jasmine');
 };
