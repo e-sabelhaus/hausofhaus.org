@@ -6,7 +6,7 @@ block content
       a(href=post.url)
         = post.title
     span.date #{post.date.getMonth()+1}.#{post.date.getDate()}.#{post.date.getFullYear()}
-    div.post.content
+    div.post.content(markdown=1)
       != post.content
     div.tags
       - each tag in post.tags
