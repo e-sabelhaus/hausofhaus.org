@@ -31,7 +31,13 @@ var express = require('express'),
   var poet = new Poet(app, {
     posts: './_posts/',
     postsPerPage: 5,
-    metaFormat: 'json'
+    metaFormat: 'json',
+    routes: {
+    '/posts/:post': 'post',
+    '/pages/:page': 'page',
+    '/tags/:tag': 'tag',
+    '/categories/:category': 'category'
+  }
   });
 
   poet.init().then(function () {

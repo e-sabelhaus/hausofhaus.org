@@ -15,44 +15,19 @@ html
           li.name
             h1
               a(href='/') Hausofhaus
-          if user.isAnonymous
               li.toggle-topbar.menu-icon.has-dropdown
                 a(href='#')
                   span
                 ul.dropdown
                   li
-                    a(href='/login') login
-                  li
-                    a(href='/register') register
-            else
-              li.toggle-topbar.menu-icon.has-dropdown
-                a(href='#')
-                  span
-                ul.dropdown
-                  li
-                    a(href='/logout') logout
-                  li
-                    a(href='/profile') profile
-                  li
-                    a(href='/poet') write post
+                    a(href='/pages') posts
         section.top-bar-section
           ul.right
-            if user.isAnonymous
-              li.has-dropdown.not-click
-                a(href='#') anonymous
-                ul.dropdown
-                  li
-                    a(href='/login') login
-                  li
-                    a(href='/register') register
-            else
-              li.has-dropdown.not-click
-                a(href='#') #{user.name}
-                ul.dropdown
-                  li
-                    a(href='/logout') logout
-                  li
-                    a(href='/profile') profile
+            li.has-dropdown.not-click
+              a(href='#') stuff
+              ul.dropdown
+                li
+                  a(href='/pages/1') posts 
     block content
       script(src='/js/vendor/jquery.js')
       script(src='/js/foundation.min.js')
