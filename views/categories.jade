@@ -5,4 +5,4 @@ block content
   ul
     - each cat in getCategories()
       li
-        a(markdown=1 href=categoryUrl(cat)) #{cat}
+        a(href=categoryUrl(cat)) #{cat}

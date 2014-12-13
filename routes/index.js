@@ -9,21 +9,16 @@ var router = express.Router();
     res.render('index');
   });
 
-  // /* GET home page. */
+  // /* GET login. */
   // router.get('/login', function(req, res) {
   //   res.render('login');
   // });
   //
-  // /* GET home page. */
+  // /* GET register. */
   // router.get('/register', function(req, res) {
   //   res.render('register');
   // });
-  //
-  // /* GET users listing. */
-  // router.get('/users', function(req, res) {
-  //   res.render('user');
-  // });
-  //
+  // /* GET router */
   // router.get('/profile', function(req, res) {
   //   res.render('profile');
   // });
