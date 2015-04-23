@@ -31,7 +31,7 @@ module.exports = function(grunt) {
       }
     },
     forever: {
-      prestige:{
+      web:{
         options: {
           index: 'app.js',
           logDir: 'log'
@@ -39,8 +39,8 @@ module.exports = function(grunt) {
       }
     }
   });
-  grunt.registerTask('start', ['forever:prestige:start']);
-  grunt.registerTask('stop', ['forever:prestige:stop']);
+  grunt.registerTask('start', ['forever:web:start']);
+  grunt.registerTask('stop', ['forever:web:stop']);
   grunt.registerTask('default', ['jshint', 'plato:coverage', 'mochaTest']);
   grunt.registerTask('plato', ['plato:coverage']);
   grunt.loadNpmTasks('grunt-mocha-test');

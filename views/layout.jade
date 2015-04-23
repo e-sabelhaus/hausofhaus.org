@@ -6,7 +6,7 @@ html
     meta(charset='utf-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     link(rel='stylesheet', href='/css/app.css')
-    link(rel='stylesheet', href='/css/style.css')
+    link(rel='shortcut icon', href='/favicon.ico', type='image/x-icon')
     script(src='/js/vendor/modernizr.js')
   body
     block header
@@ -25,12 +25,30 @@ html
           ul.left.has-dropdown
             li
               a(href='/pages/1') Posts
-    block content
+    div.container
+      div.row
+        div.12.columns
+          block content
     script(src='/js/vendor/jquery.js')
     script(src='/js/foundation.min.js')
     script.
       $(document).foundation();
     script(src='/js/stickey_footer.js')
     block foot
-      #footer
-        p Designed by Eric Sabelhaus
+    #footer
+      div.row
+        div.small-12.large-10.columns
+          div.row
+            div.small-8.large-8.columns
+              Designed By Eric Sabelhaus
+            div.small-4.large-4.columns
+              ul.inline-list.right
+                li
+                  a(href="https://github.com/e-sabelhaus")
+                    i.fi-social-github
+                li
+                  a(href="https://twitter.com/ESabelhaus")
+                    i.fi-social-twitter
+                li
+                  a(href="https://plus.google.com/+EricSabelhaus88")
+                    i.fi-social-google-plus

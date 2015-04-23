@@ -1,0 +1,3 @@
+[submodule "stylehaus"]
+	path = stylehaus
+	url = git@github.com:e-sabelhaus/stylehaus.git

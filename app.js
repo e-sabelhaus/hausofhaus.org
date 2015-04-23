@@ -79,9 +79,6 @@ var express = require('express'),
       });
   });
 
-
-  app.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/login' }));
-
   module.exports = app;
 
   app.listen(3000);
